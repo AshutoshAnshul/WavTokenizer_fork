@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 import torch
 from torch import nn
@@ -200,7 +200,7 @@ class VocosBackbone(Backbone):
         dropout = 0.1
         attn_type="vanilla"
 
-        pos_net : tp.List[nn.Module] = [
+        pos_net : List[nn.Module] = [
             ResnetBlock(in_channels=block_in,out_channels=block_in,
                         temb_channels=self.temb_ch,dropout=dropout),
             ResnetBlock(in_channels=block_in,out_channels=block_in,
